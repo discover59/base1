@@ -2,9 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Angular Scheduling</title>
+
+    <!-- CSS -->
+    <!-- load Bootstrap and custom style.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="container" ng-app="scheduleApp" ng-controller="MainController as vm">
 
+    <div class="page-header text-center">
+        <h1>Schedule City</h1>
+    </div>
+
+    <!-- were doing one day with 1 time slot for simplicity -->
+    <!-- we'll use angular's ng-repeat in a bit to get the other days and times -->
+    <div class="row times">
+
+        <div class="col-xs-4 text-center">
+
+            <h2>Monday</h2>
+
+            <div class="time-slot">
+                <input type="checkbox" id="monday-time">
+                <label for="monday-time">9:00am</label>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="text-center">
+        <a href="#" class="btn btn-primary" ng-click="vm.reset()">Reset</a>
+    </p>
+
+</div>
+<!-- JS -->
+<!-- load Angular, Firebase, Firebase Angular Library, and custom app.js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCoPWicVfNJfYAdcA9PSw2QIVLLBfOzac8",
+        authDomain: "schedule-8210e.firebaseapp.com",
+        databaseURL: "https://schedule-8210e.firebaseio.com",
+        projectId: "schedule-8210e",
+        storageBucket: "",
+        messagingSenderId: "820897798158"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="app.js"></script>
 </body>
 </html>

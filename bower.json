@@ -1,0 +1,21 @@
+{
+  "name": "Firebase_Angular",
+  "description": "Base code for latest version of firebase and angularjs",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angularfire": "^2.3.0",
+    "jquery": "^3.2.1",
+    "angular": "^1.6.6",
+    "firebase": "^3.9.0"
+  }
+}
