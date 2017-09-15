@@ -20,13 +20,19 @@
     <!-- we'll use angular's ng-repeat in a bit to get the other days and times -->
     <div class="row times">
 
-        <div class="col-xs-4 text-center">
+        <div class="col-xs-4 text-center" ng-repeat="day in days">
 
-            <h2>Monday</h2>
+            <h2>{{ day.name }}</h2>
 
-            <div class="time-slot">
-                <input type="checkbox" id="monday-time">
-                <label for="monday-time">9:00am</label>
+            <div class="time-slot" ng-repeat="slot in day.slots">
+
+                <input type="checkbox" id="{{ day.name }}-{{ $index }}" ng-model="slot.booked" ng-disabled="slot.booked">
+
+                <label for="{{ day.name }}-{{ $index }}">{{ slot.time }}<br>
+                    <span ng-if="slot.booked">Booked</span>
+                    <span ng-if="!slot.booked">Available</span>
+                </label>
+
             </div>
         </div>
 
